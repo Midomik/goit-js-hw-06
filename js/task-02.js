@@ -8,7 +8,7 @@ const ingredients = [
 ];
 
 const ListOfIngradients =document.querySelector("#ingredients");
-let arr=[];
+
 
 const arrLiItem=ingredients.map(item => {
   const LiItem=document.createElement("li");
@@ -18,4 +18,4 @@ const arrLiItem=ingredients.map(item => {
 });
 
 
-ListOfIngradients.append(arrLiItem);
+ListOfIngradients.append(...arrLiItem);

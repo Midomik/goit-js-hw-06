@@ -14,16 +14,17 @@ const images = [
 ];
 
 
-const t3GalaryList = document.querySelector(".gallery");
-
-t3GalaryList.insertAdjacentHTML("afterbegin", images.map(item => {
-  return "<li><img src="+item.url+" alt="+item.alt+" width=400 height=300/></li>"
-}));
-
-t3GalaryList.style.display = "flex";
-t3GalaryList.style.listStyle = "none";
 
 
-// images.forEach(item => {
-//   console.log( `<li><img src="${item.url} alt="${item.alt}"/></li>`);
-// })
+const GalaryList = document.querySelector(".gallery");
+
+const render = () => {
+    const cards =images.map((item)=>
+    `<li><img src="${item.url}" alt="${item.alt}" width=400 height=300/></li>`).join("");
+    GalaryList.insertAdjacentHTML("afterbegin", cards);
+}
+
+GalaryList.style.display = "flex";
+GalaryList.style.listStyle = "none";
+render();
+

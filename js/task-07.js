@@ -1,10 +1,13 @@
-const t7Input=document.querySelector("#font-size-control");
-const t7SpanAbra=document.querySelector("#text");
+const inputElement = document.querySelector("#font-size-control");
+const spanElement = document.querySelector("#text");
 
-t7SpanAbra.style.fontSize=`${t7Input.value}px`;
+spanElement.style.fontSize = `${inputElement.value}px`;
 
-t7Input.addEventListener("input", (event)=>{
+const getSize = (event)=>{
    
-   t7SpanAbra.style.fontSize=`${event.currentTarget.value}px`;
+   spanElement.style.fontSize =`${event.currentTarget.value}px`;
     
-})
+}
+
+
+inputElement.addEventListener("input", getSize)

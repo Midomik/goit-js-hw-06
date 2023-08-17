@@ -1,6 +1,6 @@
-const t9SpanColor=document.querySelector(".color");
-const t9BtnChangeColor=document.querySelector(".change-color");
-const t9Body=document.querySelector("body");
+const SpanColor=document.querySelector(".color");
+const BtnChangeColor=document.querySelector(".change-color");
+const Body=document.querySelector("body");
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
@@ -9,10 +9,22 @@ function getRandomHexColor() {
 }
 
 
+let saveColor=getRandomHexColor();
+SpanColor.textContent=saveColor;
+SpanColor.style.color=saveColor;
+
 const describeBckColor=()=>{
-  t9Body.style.backgroundColor=getRandomHexColor();
-  t9SpanColor.textContent=getRandomHexColor();
+  const randColor=getRandomHexColor();
+  
+  Body.style.backgroundColor=saveColor;
+  SpanColor.textContent=randColor;
+  SpanColor.style.color=randColor;
+  
+  saveColor=randColor;
+  
+ 
 }
 
 
-t9BtnChangeColor.addEventListener("click", describeBckColor);
+
+BtnChangeColor.addEventListener("click", describeBckColor);
